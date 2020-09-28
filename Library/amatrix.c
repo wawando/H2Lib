@@ -583,15 +583,18 @@ print_amatrix(pcamatrix a)
   longindex lda = a->ld;
   uint      i, j;
 
-  (void) printf("amatrix(%u,%u,%u)\n", rows, cols, a->ld);
+  /* (void) printf("amatrix(%u,%u,%u)\n", rows, cols, a->ld); */
+  /* (void) printf("%u %u\n", rows, cols); */
   if (rows == 0 || cols == 0)
     return;
 
   for (i = 0; i < rows; i++) {
-    (void) printf("  (" FIELD_CS(+.5, e), FIELD_ARG(a->a[i]));
+    /* (void) printf("  (" FIELD_CS(+.5, e), FIELD_ARG(a->a[i])); */
+    (void) printf("" FIELD_CS(.10, e), FIELD_ARG(a->a[i]));
     for (j = 1; j < cols; j++)
-      (void) printf(" | " FIELD_CS(+.5, e), FIELD_ARG(a->a[i + j * lda]));
-    (void) printf(")\n");
+      /* (void) printf(" " FIELD_CS(.5, lf), FIELD_ARG(a->a[i + j * lda])); */
+      (void) printf(" " FIELD_CS(.10, e), FIELD_ARG(a->a[i + j * lda]));
+    (void) printf("\n");
   }
 }
 

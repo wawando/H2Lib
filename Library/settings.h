@@ -259,7 +259,7 @@ extern const char *_h2_novectors;
  */
 #ifdef USE_FLOAT
 #ifdef USE_COMPLEX
-#define FIELD_CS(format, cs) "%" #format #cs " + %" #format #cs "i"
+#define FIELD_CS(format, cs) "%" #format #cs
 #else
 #define FIELD_CS(format, cs) "%" #format #cs
 #endif
@@ -294,7 +294,7 @@ extern const char *_h2_novectors;
  */
 #ifdef USE_FLOAT
 #ifdef USE_COMPLEX
-#define FIELD_ARG(z) crealf(z), cimagf(z)
+#define FIELD_ARG(z) crealf(z)
 #else
 #define FIELD_ARG(z) z
 #endif

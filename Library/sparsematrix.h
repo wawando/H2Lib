@@ -173,6 +173,12 @@ clear_sparsematrix(psparsematrix a);
 HEADER_PREFIX void
 print_sparsematrix(pcsparsematrix a);
 
+/** @brief Print a sparse matrix in its full entry form
+ *
+ *  @param a Source matrix. */
+HEADER_PREFIX void
+print_sparsematrix_full(pcsparsematrix a);
+
 /** @brief Print matrix to a Postscript file.
  *
  *  @param a Source matrix.
