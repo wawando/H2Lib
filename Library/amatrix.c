@@ -584,7 +584,7 @@ print_amatrix(pcamatrix a)
   uint      i, j;
 
   /* (void) printf("amatrix(%u,%u,%u)\n", rows, cols, a->ld); */
-  /* (void) printf("%u %u\n", rows, cols); */
+  (void) printf("%u %u\n", rows, cols);
   if (rows == 0 || cols == 0)
     return;
 

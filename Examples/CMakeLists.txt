@@ -1,8 +1,11 @@
 set(EXAMPLES
   example_amatrix_bem3d
   example_hmatrix_bem3d
+  amatrix_bem2d_laplace
+  amatrix_fem2d_laplace
   amatrix_bem3d_laplace
   amatrix_bem3d_helmholtz
+  hmatrix_bem3d_laplace
   )
 
 include_directories(${PROJECT_SOURCE_DIR}/Library)

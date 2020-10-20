@@ -249,15 +249,24 @@ print_surface3d(pcsurface3d gr)
   const real *g = (const real *) gr->g;
   uint      i;
 
-  (void) printf("surface3d(%u,%u,%u)\n", vertices, edges, triangles);
-  for (i = 0; i < vertices; i++)
-    (void) printf(" %d: (% .5e % .5e % .5e)\n", i, x[i][0], x[i][1], x[i][2]);
-  for (i = 0; i < edges; i++)
-    (void) printf(" %d: (%u %u)\n", i, e[i][0], e[i][1]);
-  for (i = 0; i < triangles; i++)
-    (void) printf(" %d: (%u %u %u  %u %u %u  % .5e % .5e % .5e  % .5e)\n", i,
-		  t[i][0], t[i][1], t[i][2], s[i][0], s[i][1], s[i][2],
-		  n[i][0], n[i][1], n[i][2], g[i]);
+  /* (void) printf("surface3d(%u,%u,%u)\n", vertices, edges, triangles); */
+  /* for (i = 0; i < vertices; i++) */
+  /*   (void) printf(" %d: (% .5e % .5e % .5e)\n", i, x[i][0], x[i][1], x[i][2]); */
+  /* for (i = 0; i < edges; i++) */
+  /*   (void) printf(" %d: (%u %u)\n", i, e[i][0], e[i][1]); */
+  /* for (i = 0; i < triangles; i++) */
+  /*   (void) printf(" %d: (%u %u %u  %u %u %u  % .5e % .5e % .5e  % .5e)\n", i, */
+	/* 	  t[i][0], t[i][1], t[i][2], s[i][0], s[i][1], s[i][2], */
+	/* 	  n[i][0], n[i][1], n[i][2], g[i]); */
+
+  // Print centroid of triangles as characteristic points instead
+  (void) printf("%u 3\n", triangles);
+  for (i = 0; i < triangles; i++) {
+    real xc = (x[t[i][0]][0] + x[t[i][1]][0] + x[t[i][2]][0]) / 3.0;
+    real yc = (x[t[i][0]][1] + x[t[i][1]][1] + x[t[i][2]][1]) / 3.0;
+    real zc = (x[t[i][0]][2] + x[t[i][1]][2] + x[t[i][2]][2]) / 3.0;
+    (void) printf("%.10e %.10e %.10e\n", xc, yc, zc);
+  }
 }
 
 uint

@@ -2,7 +2,7 @@
 /*  How to create an DH²-matrix approximation for the Helmholtz equation  */
 /*------------------------------------------------------------------------*/
 
-/* #ifdef USE_COMPLEX */
+#ifdef USE_COMPLEX
 /* Important, for Helmholtz problems complex numbers are necessary 
 (To change, use the "options.inc" / DUSE_COMPLEX) */
 
@@ -134,18 +134,18 @@ main(int argc, char **argv)
   return EXIT_SUCCESS;
 }
 
-/* #else */
+#else
 
-/* #include <stdio.h> */
+#include <stdio.h>
 
-/* int */
-/* main(int argc, char **argv) */
-/* { */
+int
+main(int argc, char **argv)
+{
 
-/*   fprintf(stderr, */
-/* 	  "Need complex numbers, activate with '-DUSE_COMPLEX' (options.inc) \n"); */
+  fprintf(stderr,
+	  "Need complex numbers, activate with '-DUSE_COMPLEX' (options.inc) \n");
 
-/*   return 0; */
-/* } */
+  return 0;
+}
 
-/* #endif */
+#endif

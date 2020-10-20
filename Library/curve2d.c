@@ -460,12 +460,17 @@ print_curve2d(pccurve2d gr)
   const real *g = (const real *) gr->g;
   uint      i;
 
-  (void) printf("curve2d(%u,%u)\n", vertices, edges);
+  /* (void) printf("curve2d(%u,%u)\n", vertices, edges); */
+  (void) printf("%u 2\n", vertices);
   for (i = 0; i < vertices; i++)
-    (void) printf(" (% .5e % .5e)\n", x[i][0], x[i][1]);
-  for (i = 0; i < edges; i++)
-    (void) printf(" (%u %u   % .5e % .5e   %.5e)\n", e[i][0], e[i][1],
-		  n[i][0], n[i][1], g[i]);
+    /* (void) printf(" (% .5e % .5e)\n", x[i][0], x[i][1]); */
+    (void) printf("%.10e %.10e\n", x[i][0], x[i][1]);
+
+  /* (void) printf("%u\n", edges); */
+  /* for (i = 0; i < edges; i++) */
+    /* (void) printf(" (%u %u   % .5e % .5e   %.5e)\n", e[i][0], e[i][1], */
+		/*   n[i][0], n[i][1], g[i]); */
+    /* (void) printf("%u %u\n", e[i][0], e[i][1]); */
 }
 
 #ifdef USE_CAIRO
